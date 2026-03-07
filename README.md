@@ -37,8 +37,3 @@ By computing the product $A = P \cdot Q$, we create a "Hamiltonian-like" operato
 Solving the entire spectrum of a $10^5 \times 10^5$ matrix is computationally prohibitive. However, in waveguide design, we are exclusively interested in **guided modes**—those with the highest $n_{eff}$ confined within the core.
 
 LuminaFDFD employs the **Shift-Invert Arnoldi Method**. By applying a "spectral shift" $\sigma$ near the expected core index (e.g., $n_{Si} \approx 3.48$), we transform the eigenvalue problem to find the modes closest to our target. This ensures that the solver converges rapidly to the fundamental TE and TM modes, bypassing the infinite sea of radiation modes in the cladding.
-
----
-
-## 🛠️ Implementation Philosophy: Why Python?
-While raw performance is often associated with C++, the computational bottleneck in FDFD is dominated by the linear algebra backend. By leveraging `scipy.sparse.linalg` (which wraps highly optimized ARPACK and SuperLU libraries), LuminaFDFD achieves near-native performance while maintaining the extreme flexibility of Python. This makes the library an ideal bridge between rapid prototyping and rigorous academic research.
