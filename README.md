@@ -1,4 +1,5 @@
 # High-Performance-Optical-Mode-Solver
+<<<<<<< HEAD
 # LuminaFDFD: High-Performance Optical Mode Solver
 
 
@@ -42,3 +43,6 @@ LuminaFDFD employs the **Shift-Invert Arnoldi Method**. By applying a "spectral 
 
 ## 🛠️ Implementation Philosophy: Why Python?
 While raw performance is often associated with C++, the computational bottleneck in FDFD is dominated by the linear algebra backend. By leveraging `scipy.sparse.linalg` (which wraps highly optimized ARPACK and SuperLU libraries), LuminaFDFD achieves near-native performance while maintaining the extreme flexibility of Python. This makes the library an ideal bridge between rapid prototyping and rigorous academic research.
+=======
+Based on the Finite-Difference Frequency-Domain (FDFD) method, this solver discretizes Maxwell's equations on a staggered Yee-grid to compute the effective index and electromagnetic field distributions of complex waveguide cross-sections.
+>>>>>>> d46dd07c5d8cf3c9396bc27e94d1c98ab0613e8d
